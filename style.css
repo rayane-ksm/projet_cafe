@@ -101,27 +101,36 @@ form img{
 #texte{
   display:none;
 }
-/* 
-.parcourir{
-  background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
-}
-
-#texte{
-  color: black;
-}
-
-#parcourir{
-  border: solid 1px red;
-  height: 7rem;
-  opacity: 0;
-} */
 
 #mdpIc{
   width: 46rem;
 }
 
+.icons{
+  border: 2px solid white;
+  border-radius: 100%;
+}
 
+i{
+  display: block;
+  width: 30px;
+  aspect-ratio: 1/1;
+  padding: 8px;
+  margin-top: 1rem;
+}
+
+#btnConnect{
+margin-top: 1rem;
+}
+
+.contain_icons{
+  display: flex;
+  flex-direction: row;
+}
+
+.iconActif{
+  background-color: rgb(87, 87, 161);
+}
 
 
 

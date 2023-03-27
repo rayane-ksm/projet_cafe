@@ -221,11 +221,52 @@
                     <input display="inline" id="passWord" type="password" value="admin" name="pass" placeholder="Mot de passe">
                     <i id="eye" class="fas fa-eye-slash"></i>
                     </div>
+                    
                     <br>
+                        <?php
 
-                    <button type="submit" name="connect">Se connecter</button>
+                        $rand = rand(0,5);
+
+                        try {
+                            $sql = "SELECT * FROM z_captcha";
+                            $stmt = $connect->prepare($sql);
+                            $stmt->execute(array());
+                        } catch (Exception $e) {print "Erreur ! " . $e->getMessage() . "<br/>";}
+                        
+                        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        echo 'Merci de cliquer sur '.$results[$rand]['nom'].'<br>';
+                        echo '<div class="contain_icons">';
+                        foreach($results as $key=>$value){
+                            echo '<i id="'.$value['id'].'" class="icons '.$value['icon'].'"></i>';
+                        }
+                        echo '</div>';
+                        ?>
+                    
+                    <button id="btnConnect" type="submit" name="connect" style="display: none;">Se connecter</button>
                 </form>
                 <?php } ?>
+
+                <script>
+                    $(document).ready(function(){
+                        $('.icons').on('click',function(){
+                        idClicked = $(this).attr("id")
+                        idRand = '<?php echo $rand ?>'
+                        $('.icons').removeClass('iconActif')
+                        $(this).addClass('iconActif')
+                        console.log('idCliked '+idClicked+' idRand '+idRand)
+                        btnConnecter = $('#btnConnect')
+                        
+                        if(idClicked-1==idRand){
+                            btnConnecter.fadeIn(1000)
+                            }
+                            else{
+                            btnConnecter.fadeOut();
+                            console.log ('Vous etes un robot');
+                            }
+                        })
+                    })
+
+                </script>
                 
 
                 <form method="POST" class="form_forget">

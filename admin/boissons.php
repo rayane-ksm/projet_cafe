@@ -56,8 +56,7 @@
     // echo $image[0];
     // echo '<br>';
     // echo $image[1];
-    // echo '<hr>';
-
+    // echo '<hr>';    
 
     // UPLOAD //
     if (isset($_POST['upload'])) {
