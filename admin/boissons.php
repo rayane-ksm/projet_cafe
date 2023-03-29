@@ -58,6 +58,16 @@
     // echo $image[1];
     // echo '<hr>';    
 
+    try {
+        $sql = "SELECT * FROM connectadmin";
+        $stmt = $connect->prepare($sql);
+        $stmt->execute(array());
+    } catch (Exception $e) {print "Erreur ! " . $e->getMessage() . "<br/>";}
+    
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //print_r($_SESSION['admin']['role']);//
+    if($_SESSION['admin']['role'] === 1){
+
     // UPLOAD //
     if (isset($_POST['upload'])) {
         $sendImg=true;
@@ -192,6 +202,19 @@
 <div id="ajaxCreate" style="background-color: green;border-radius:50% ;margin:11px;position:fixed;top:0px;right:48%;padding:11px;display:none">Ajouté</div>
 <div id="ajaxDelete" style="background-color: red;border-radius:50% ;margin:11px;position:fixed;top:0px;right:48%;padding:11px;display:none">Supprimé</div>
 
+<?php }else{
+    try {
+        $sql = "SELECT * FROM boissons";
+        $stmt = $connect->prepare($sql);
+        $stmt->execute(array());
+    } catch (Exception $e) {print "Erreur ! " . $e->getMessage() . "<br/>";}
+
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);}
+    //print_r($results[1]['nom'])
+    echo '<p><img class="image" src="img/'.$results[0]['image'].'"> Boisson : '.$results[0]['nom'].' / Stock : '.$results[0]['stock'].' / Condiment : '.$results[0]['condiment'].'</p>';
+    echo '<p><img class="image" src="img/'.$results[1]['image'].'"> Boisson : '.$results[1]['nom'].' / Stock : '.$results[1]['stock'].' / Condiment : '.$results[1]['condiment'].'</p>';
+    echo '<p><img class="image" src="img/'.$results[2]['image'].'"> Boisson : '.$results[2]['nom'].' / Stock : '.$results[2]['stock'].' / Condiment : '.$results[2]['condiment'].'</p>';
+    ?>
 
 <script>
     // Pour démarrer l'ajax //
