@@ -37,7 +37,7 @@
             $mdpTwo = $_POST['passTwo'];
 
             if($mdpOne != $mdpTwo){
-                echo '‼ Les 2 MDP doivent êtres identiques ‼';
+                echo '‼ Les mots de passe doivent êtres identiques ‼';
                 $showForm = true;
             }else{
                 $nom = $_POST["nom"];
@@ -53,7 +53,7 @@
                             echo "Problème de persistence";
                             // var_dump($e);
                         }
-                        echo '<h1>Bienvenue</h1>';
+                        echo '<h1>Inscription réussie</h1>';
             }
         
     }
