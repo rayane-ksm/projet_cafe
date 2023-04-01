@@ -39,7 +39,7 @@
                     if ($results['stock'] == 0) {
                         echo 'disabled';
                     }
-                    echo '> ' . $results['nom'] . '('.$results['stock'].')  </option>';
+                    echo '> ' . $results['nom'] . '</option>';
                 }
                 ?>
             </select>
