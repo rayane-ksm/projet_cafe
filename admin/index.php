@@ -9,8 +9,7 @@
     <title>Admin</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../jquery.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/8f45788873.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
