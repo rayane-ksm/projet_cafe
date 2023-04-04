@@ -215,10 +215,10 @@
             ?>
                 <form method="POST" id="login" class="form_admin">
                     <label for="nom">Nom d'utilisateur</label>
-                    <input type="text" name="login" placeholder="login" value="admin" autofocus><br>
+                    <input type="text" name="login" placeholder="login" value="visit" autofocus><br>
                     <label for="mdp">Mot de passe</label>
                     <div id="mdpIc">
-                    <input display="inline" id="passWord" type="password" value="admin" name="pass" placeholder="Mot de passe">
+                    <input display="inline" id="passWord" type="password" value="visit" name="pass" placeholder="Mot de passe">
                     <i id="eye" class="fas fa-eye-slash"></i>
                     </div>
                     
